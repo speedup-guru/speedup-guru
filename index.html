@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+<!-- This code was generated using AnimaApp.com. 
+This code is a high-fidelity prototype.
+Get developer-friendly React or HTML/CSS code for this project at: https://projects.animaapp.com?utm_source=hosted-code 
+06/04/2024 11:12:29 -->
+
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"><meta name="og:type" content="website"><meta name="twitter:card" content="photo"><script id="anima-load-script" src="load.js"></script><script id="anima-hotspots-script" src="hotspots.js"></script><script id="anima-overrides-script" src="overrides.js"></script><script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script><style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700,600");
+
+
+@font-face {
+  font-family: "Arial-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://anima-uploads.s3.amazonaws.com/projects/653a98e4fe9c72e81aaadc15/fonts/audiowide-regular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Arial-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://anima-uploads.s3.amazonaws.com/projects/653e91e15650ba167f907146/fonts/fontsfree-net-arial-bold.ttf') format("truetype");
+}
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/66112dc60e4eb3b01f3ec20f.66112dc70e4eb3b01f3ec212.sn29u8b.hch.png");
+
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+  display: contents;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.component-wrapper * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
+}
+
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.overlay-base {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-base.animate-appear {
+  align-items: center;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+  pointer-events: none;
+}
+
+@keyframes reveal {
+  from { opacity: 0 }
+ to { opacity: 1 }
+}
+
+.animate-nodelay {
+  animation-delay: 0s;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.align-self-flex-center {
+  align-self: flex-center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valign-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root { 
+  --black: #000000;
+  --blumine: #1e647d;
+  --persian-green: #00a3a3;
+  --sunset-orange: #ff5d52;
+  --white: #ffffff;
+ 
+  --font-size-l: 15px;
+  --font-size-m: 11.6px;
+  --font-size-xl: 15.5px;
+  --font-size-xxl: 15.8px;
+  --font-size-xxxl: 17.7px;
+  --font-size-xxxxl: 18px;
+  --font-size-xxxxxl: 24px;
+ 
+  --font-family-arial-bold: "Arial-Bold", Helvetica;
+  --font-family-arial-regular: "Arial-Regular", Helvetica;
+  --font-family-inter: "Inter", Helvetica;
+}
+.arial-regular-normal-blumine-11-6px {
+  color: var(--blumine);
+  font-family: var(--font-family-arial-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-normal-blumine-15px {
+  color: var(--blumine);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+}
+
+
+/* screen - frame-12 */
+
+.frame-12 {
+  background-color: var(--white);
+  height: 2392px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 390px;
+}
+
+.frame-12 .group-110-dsjkuv {
+  height: 2253px;
+  left: 0px;
+  top: 0px;
+  width: 396px;
+}
+
+.frame-12 .rectangle-157-q2f9Ra {
+  background-color: var(--persian-green);
+  height: 43px;
+  left: 35px;
+  position: absolute;
+  top: 642px;
+  width: 321px;
+}
+
+.frame-12 .main-q2f9Ra {
+  background-color: #ffffff01;
+  box-shadow: 0px 0px 8px #00000033;
+  height: 400px;
+  left: 0px;
+  position: absolute;
+  top: 100px;
+  width: 390px;
+}
+
+.frame-12 .link-with-pampers-cl-73e9A5 {
+  background-color: transparent;
+  height: 400px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 390px;
+}
+
+.frame-12 .heading-2-save-on-diapers-73e9A5 {
+  background-color: transparent;
+  color: var(--blumine);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 400;
+  height: 58px;
+  left: 59px;
+  letter-spacing: 0.05px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 272px;
+}
+
+.frame-12 .avec-pampers-club-73e9A5 {
+  background-color: transparent;
+  color: var(--blumine);
+  font-family: var(--font-family-arial-regular);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+  height: 24px;
+  left: 117px;
+  letter-spacing: 0.06px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 85px;
+  white-space: nowrap;
+  width: 157px;
+}
+
+.frame-12 .group-108-73e9A5 {
+  top: 120px;
+}
+
+.frame-12 .img-4YE87Y {
+  left: 0px;
+}
+
+.frame-12 .participer-lCjazg {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 700;
+  height: 19px;
+  left: 27px;
+  letter-spacing: 0.07px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  white-space: nowrap;
+  width: 168px;
+}
+
+.frame-12 .img-0Mj6za {
+  left: 263px;
+}
+
+.frame-12 .group-108-q2f9Ra {
+  top: 902px;
+}
+
+.frame-12 .img-UIPuOc {
+  left: 0px;
+}
+
+.frame-12 .procder-au-paiement-4jQTfx {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 700;
+  height: 19px;
+  left: 11px;
+  letter-spacing: 0.07px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  white-space: nowrap;
+  width: 200px;
+}
+
+.frame-12 .img-qgnxaF {
+  left: 263px;
+}
+
+.frame-12 .main-heading-2-try-our-parenting-tools-q2f9Ra {
+  height: 87px;
+  top: 540px;
+}
+
+.frame-12 .main-heading-2-try-our-parenting-tools-nUxIHQ {
+  height: 29px;
+  top: 1035px;
+}
+
+.frame-12 .participez-un-tirage-q2f9Ra {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-arial-bold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  height: 34px;
+  left: 60px;
+  letter-spacing: 0.06px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 646px;
+  width: 271px;
+}
+
+.frame-12 .banner-q2f9Ra {
+  background-color: var(--persian-green);
+  height: 100px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 390px;
+}
+
+.frame-12 .navigation-g8tPHb {
+  background-color: transparent;
+  height: 55px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 390px;
+}
+
+.frame-12 .div-logo-container__-xqtxno {
+  background-color: transparent;
+  height: 48px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 93px;
+}
+
+.frame-12 .div-accordion__-acco-xqtxno {
+  background-color: transparent;
+  height: 55px;
+  left: 93px;
+  position: absolute;
+  top: 0px;
+  width: 297px;
+}
+
+.frame-12 .divpanel__header-WkdNv8 {
+  background-color: transparent;
+  height: 48px;
+  left: 0px;
+  position: relative;
+  top: 7px;
+  width: 297px;
+}
+
+.frame-12 .navigation-list-g8tPHb::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.frame-12 .navigation-list-g8tPHb {
+  background-color: transparent;
+  height: 52px;
+  left: 20px;
+  overflow: hidden;
+  overflow-x: scroll;
+  position: absolute;
+  top: 48px;
+  width: 370px;
+}
+
+.frame-12 .listitem-SOVU20 {
+  left: 0px;
+  width: 103px;
+}
+
+.frame-12 .button-products-products-8erGMq {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: 17.2px;
+  font-style: normal;
+  font-weight: 600;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+  width: 75px;
+}
+
+.frame-12 .listitem-xzCtKW {
+  left: 103px;
+  width: 149px;
+}
+
+.frame-12 .button-pampers-club-pampers-club-tbk2z2 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+  width: 121px;
+}
+
+.frame-12 .listitem-7IBxeP {
+  left: 252px;
+  width: 119px;
+}
+
+.frame-12 .button-pregnancy-pregnancy-zEM41P {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: 17.5px;
+  font-style: normal;
+  font-weight: 600;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+  width: 91px;
+}
+
+.frame-12 .listitem-mMuc4D {
+  left: 372px;
+  width: 111px;
+}
+
+.frame-12 .button-parenting-parenting-GKGOsB {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: 17.8px;
+  font-style: normal;
+  font-weight: 600;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+  width: 83px;
+}
+
+.frame-12 .listitem-vHfxnI {
+  left: 483px;
+  width: 105px;
+}
+
+.frame-12 .button-about-us-about-us-a8bHDN {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: 17.1px;
+  font-style: normal;
+  font-weight: 600;
+  height: 19px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+  width: 77px;
+}
+
+.frame-12 .group-107-q2f9Ra {
+  background-color: transparent;
+  height: 147px;
+  left: 40px;
+  position: absolute;
+  top: 715px;
+  width: 93px;
+}
+
+.frame-12 .payez-la-cotisation-de-2-euros-hRPhMZ {
+  background-color: transparent;
+  height: 60px;
+  left: 0px;
+  letter-spacing: 0.03px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 87px;
+  width: 91px;
+}
+
+.frame-12 .picture-toypng-hRPhMZ {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/picture---toy-png@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 77px;
+  left: 5px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 80px;
+}
+
+.frame-12 .group-106-q2f9Ra {
+  background-color: transparent;
+  height: 127px;
+  left: 151px;
+  position: absolute;
+  top: 715px;
+  width: 90px;
+}
+
+.frame-12 .participez-au-tirage-uMI3sn {
+  background-color: transparent;
+  height: 40px;
+  left: 0px;
+  letter-spacing: 0.03px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 87px;
+  width: 88px;
+}
+
+.frame-12 .picture-babypng-uMI3sn {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/picture---baby-png@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 77px;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 80px;
+}
+
+.frame-12 .group-105-q2f9Ra {
+  background-color: transparent;
+  height: 147px;
+  left: 247px;
+  position: absolute;
+  top: 715px;
+  width: 122px;
+}
+
+.frame-12 .gagnez-un-approvisionnement-annuel-Boy5nU {
+  background-color: transparent;
+  height: 60px;
+  left: 0px;
+  letter-spacing: 0.03px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 87px;
+  width: 120px;
+}
+
+.frame-12 .picture-giftpng-Boy5nU {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/picture---gift-png@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 77px;
+  left: 20px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 80px;
+}
+
+.frame-12 .zeoob-1-q2f9Ra {
+  background-color: transparent;
+  height: 561px;
+  left: 55px;
+  object-fit: cover;
+  position: absolute;
+  top: 1104px;
+  width: 280px;
+}
+
+.frame-12 .zeoob-2-q2f9Ra {
+  background-color: transparent;
+  height: 448px;
+  left: 55px;
+  object-fit: cover;
+  position: absolute;
+  top: 1685px;
+  width: 280px;
+}
+
+.frame-12 .group-111-q2f9Ra {
+  background-color: transparent;
+  height: 56px;
+  left: 0px;
+  position: absolute;
+  top: 2197px;
+  width: 390px;
+}
+
+.frame-12 .rectangle-158-KQ3d2A {
+  background-color: var(--persian-green);
+  height: 56px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 390px;
+}
+
+.frame-12 .group-109-KQ3d2A {
+  background-color: transparent;
+  height: 40px;
+  left: 13px;
+  position: absolute;
+  top: 8px;
+  width: 350px;
+}
+
+.frame-12 .white__1_svg-fill-9bD9x5 {
+  background-color: transparent;
+  height: 28px;
+  left: 0px;
+  position: absolute;
+  top: 6px;
+  width: 58px;
+}
+
+.frame-12 .list-item-link-twitt-9bD9x5 {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/list---item---link---twitter-icon---icon-social-twitter-svg@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 40px;
+  left: 166px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 40px;
+}
+
+.frame-12 .list-item-link-faceb-9bD9x5 {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/list---item---link---facebook-icon---icon-social-fb-svg@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 40px;
+  left: 214px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 40px;
+}
+
+.frame-12 .list-item-link-youtube-icon-social-ytsvg-9bD9x5 {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/list---item---link---youtube---icon-social-yt-svg@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 40px;
+  left: 262px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 40px;
+}
+
+.frame-12 .list-item-link-pinte-9bD9x5 {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/list---item---link---pinterest-icon---icon-social-pinterest-svg@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 40px;
+  left: 310px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 40px;
+}
+
+.frame-12 .group-110-yn2rdl {
+  height: 87px;
+  left: 69px;
+  top: 2278px;
+  width: 257px;
+}
+
+.frame-12 .x2024-procter-gamble-0s05H1 {
+  background-color: transparent;
+  color: var(--blumine);
+  font-family: var(--font-family-arial-bold);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  height: 21px;
+  left: 0px;
+  letter-spacing: 0.05px;
+  line-height: 21.3px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: 188px;
+}
+
+.frame-12 .all-rights-reserved-0s05H1 {
+  background-color: transparent;
+  height: 64px;
+  left: 0px;
+  letter-spacing: 0.05px;
+  line-height: 16.0px;
+  position: absolute;
+  text-align: left;
+  top: 23px;
+  width: 253px;
+}
+
+.frame-12 .span0-RxsFbj {
+  letter-spacing: 0.01px;
+}
+
+.frame-12 .span1-RxsFbj {
+  letter-spacing: 0.01px;
+  text-decoration: underline;
+}
+
+.frame-12 .span2-RxsFbj {
+  letter-spacing: 0.01px;
+}
+
+.frame-12 .group-108 {
+  background-color: transparent;
+  height: 43px;
+  left: 43px;
+  position: absolute;
+  width: 304px;
+}
+
+.frame-12 .group-110 {
+  background-color: transparent;
+  position: absolute;
+}
+
+.frame-12 .img {
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  width: 41px;
+}
+
+.frame-12 .link-download-app-now {
+  background-color: var(--sunset-orange);
+  border: 2px solid;
+  border-color: var(--sunset-orange);
+  border-radius: 25px;
+  height: 43px;
+  left: 41px;
+  position: absolute;
+  top: 0px;
+  width: 222px;
+}
+
+.frame-12 .listitem {
+  background-color: transparent;
+  height: 52px;
+  position: absolute;
+  top: 0px;
+}
+
+.frame-12 .main-heading-2-try-our-parenting-tools {
+  background-color: transparent;
+  color: var(--blumine);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 700;
+  left: 29px;
+  letter-spacing: 0.06px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  width: 333px;
+}
+</style></head><body style="margin: 0;background: #ffffff;"><input type="hidden" id="anPageName" name="page" value="frame-12"><div class="container-center-horizontal"><div class="frame-12 screen " data-id="550:2054"><div class="group-110-dsjkuv group-110" data-id="550:2055"><div class="rectangle-157-q2f9Ra" data-id="550:2057"></div><div class="main-q2f9Ra" data-id="550:2058"><img class="link-with-pampers-cl-73e9A5" data-id="550:2059" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/link---with-pampers-club---picture---microsoftteams-image--6--1-@2x.png" alt="Link - with Pampers Club  Picture  MicrosoftTeams-image__6__1_.png"><div class="heading-2-save-on-diapers-73e9A5 valign-text-middle" data-id="550:2060">Réserve annuelle de couches</div><div class="avec-pampers-club-73e9A5 valign-text-middle" data-id="550:2061">avec Pampers Club</div><div class="group-108-73e9A5 group-108" data-id="550:2062"><img class="img-4YE87Y img" data-id="550:2063" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/img.svg" alt="Img"><div class="link-download-app-now" data-id="550:2065"><div class="participer-lCjazg valign-text-middle" data-id="550:2066">Participer</div></div><img class="img-0Mj6za img" data-id="550:2067" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/img-1.svg" alt="Img"></div></div><div class="group-108-q2f9Ra group-108" data-id="550:2069"><img class="img-UIPuOc img" data-id="550:2070" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/img-2.svg" alt="Img"><div class="link-download-app-now" data-id="550:2072"><div class="procder-au-paiement-4jQTfx valign-text-middle" data-id="550:2073">Procéder au paiement</div></div><img class="img-qgnxaF img" data-id="550:2074" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/img-3.svg" alt="Img"></div><h1 class="main-heading-2-try-our-parenting-tools-q2f9Ra valign-text-middle main-heading-2-try-our-parenting-tools" data-id="550:2076">Tirage au sort pour un approvisionnement annuel de couches en France</h1><div class="main-heading-2-try-our-parenting-tools-nUxIHQ valign-text-middle main-heading-2-try-our-parenting-tools" data-id="550:2077">Avis des participants</div><p class="participez-un-tirage-q2f9Ra valign-text-middle" data-id="550:2078">Participez à un tirage au sort unique pour seulement 2 euros</p><div class="banner-q2f9Ra" data-id="550:2079"><div class="navigation-g8tPHb" data-id="550:2080"><img class="div-logo-container__-xqtxno" data-id="550:2081" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/div-logocontainer--styledwrapper-sc-av256c-0.svg" alt="div.LogoContainer__StyledWrapper-sc-av256c-0"><div class="div-accordion__-acco-xqtxno" data-id="550:2101"><div class="divpanel__header-WkdNv8" data-id="550:2102"></div></div></div><div class="navigation-list-g8tPHb" data-id="550:2104"><div class="listitem-SOVU20 listitem" data-id="550:2105"><div class="button-products-products-8erGMq valign-text-middle" data-id="550:2106">Products</div></div><div class="listitem-xzCtKW listitem" data-id="550:2107"><div class="button-pampers-club-pampers-club-tbk2z2 valign-text-middle" data-id="550:2108">Pampers Club</div></div><div class="listitem-7IBxeP listitem" data-id="550:2109"><div class="button-pregnancy-pregnancy-zEM41P valign-text-middle" data-id="550:2110">Grossesse</div></div><div class="listitem-mMuc4D listitem" data-id="550:2111"><div class="button-parenting-parenting-GKGOsB valign-text-middle" data-id="550:2112">Parenting</div></div><div class="listitem-vHfxnI listitem" data-id="550:2113"><div class="button-about-us-about-us-a8bHDN valign-text-middle" data-id="550:2114">About Us</div></div></div></div><div class="group-107-q2f9Ra" data-id="550:2115"><p class="payez-la-cotisation-de-2-euros-hRPhMZ valign-text-middle inter-normal-blumine-15px" data-id="550:2116">PAYEZ LA COTISATION DE 2 EUROS</p><div class="picture-toypng-hRPhMZ" data-id="550:2117-7243b122-fac4-481a-a820-71c17211e46b"></div></div><div class="group-106-q2f9Ra" data-id="550:2118"><div class="participez-au-tirage-uMI3sn valign-text-middle inter-normal-blumine-15px" data-id="550:2119">PARTICIPEZ AU TIRAGE</div><div class="picture-babypng-uMI3sn" data-id="550:2120-d0bec589-3445-400c-b322-e3e58cee9192"></div></div><div class="group-105-q2f9Ra" data-id="550:2121"><div class="gagnez-un-approvisionnement-annuel-Boy5nU valign-text-middle inter-normal-blumine-15px" data-id="550:2122">GAGNEZ UN APPROVISIONNEMENT ANNUEL</div><div class="picture-giftpng-Boy5nU" data-id="550:2123-fa4b90ee-6f16-45fb-92bb-5da35d591729"></div></div><img class="zeoob-1-q2f9Ra" data-id="550:2124" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/zeoob-1.png" alt="zeoob 1"><img class="zeoob-2-q2f9Ra" data-id="550:2125" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/zeoob-2.png" alt="zeoob 2"><div class="group-111-q2f9Ra" data-id="550:2149"><div class="rectangle-158-KQ3d2A" data-id="550:2056"></div><div class="group-109-KQ3d2A" data-id="550:2126"><img class="white__1_svg-fill-9bD9x5" data-id="550:2127" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/66112dc80e4eb3b01f3ec214/releases/66112de2ec201515350a7bb7/img/white--1--svg-fill.svg" alt="White__1_.svg fill"><div class="list-item-link-twitt-9bD9x5" data-id="550:2145-cc4d2e84-dd90-4cd3-9f58-33405fa8af26"></div><div class="list-item-link-faceb-9bD9x5" data-id="550:2146-66fb1958-f328-400f-bbe5-7fa162debb77"></div><div class="list-item-link-youtube-icon-social-ytsvg-9bD9x5" data-id="550:2147-2bda6cd4-e63d-4ae0-8f4a-07c0867be6b8"></div><div class="list-item-link-pinte-9bD9x5" data-id="550:2148-835ade28-8bb9-4172-9722-4f1c009a2e0b"></div></div></div></div><div class="group-110-yn2rdl group-110" data-id="550:2053"><p class="x2024-procter-gamble-0s05H1 valign-text-middle" data-id="550:2050">© 2024 Procter &amp; Gamble</p><p class="all-rights-reserved-0s05H1 valign-text-middle arial-regular-normal-blumine-11-6px" data-id="550:2051"><span><span class="span0-RxsFbj arial-regular-normal-blumine-11-6px">All rights reserved.<br>The use and access to the information on this<br>site is subject to the </span><span class="span1-RxsFbj arial-regular-normal-blumine-11-6px">Terms &amp; Conditions</span><span class="span2-RxsFbj arial-regular-normal-blumine-11-6px">, set out<br>in our legal agreement.</span></span></p></div></div></div><script src="launchpad-js/launchpad-banner.js" async></script><script defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script></body></html>
